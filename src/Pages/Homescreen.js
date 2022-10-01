@@ -21,7 +21,7 @@ const Homescreen = () => {
 
   // URL
   const getWeather = () => {
-    const url = `htps://api.openweathermap.org/data/2.5/forecast/daily?lat=${coords.lat}&lon=${coords.long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coords.lat}&lon=${coords.long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
 
     fetch(url, {
       method: "Get",
@@ -91,16 +91,27 @@ const Homescreen = () => {
 
           <i className="fa fa-search"></i>
         </div>
-        <div className="drop-container">
-          {dropData &&
-            dropData.features.map(({ properties }) => {
-              return (
-                <div className="drop-Down">
-                  {`${properties.address_line1} , ${properties.state} , ${properties.country}`}
-                </div>
-              );
-            })}
-        </div>
+        {dropData && (
+          <div className="drop-container">
+            {dropData &&
+              dropData.features.map((data) => {
+                return (
+                  <div
+                    className="drop-Down"
+                    onClick={() => {
+                      const temp = {};
+                      temp.lat = data.geometry.coordinates[1];
+                      temp.long = data.geometry.coordinates[0];
+                      console.log(temp);
+                      setCoords(temp);
+                    }}
+                  >
+                    {`${data.properties.address_line1} , ${data.properties.state} , ${data.properties.country}`}
+                  </div>
+                );
+              })}
+          </div>
+        )}
         <div className="weather-info">
           <h2>{`Weather in ${weather.city}`}</h2>
           <h1>{`${weather.temp}°C`}</h1>
