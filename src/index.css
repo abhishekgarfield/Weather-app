@@ -47,6 +47,7 @@ code {
 
 .serch-container input {
   width: 30vw;
+  margin-left: 10px;
   font-size: 20px;
   color: white;
   outline: none;
