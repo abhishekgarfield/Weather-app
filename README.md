@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# Weather app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies : Reactjs , js , html , css , weatherAPI , autocompleteAPI , currentlocation
 
-## Available Scripts
 
-In the project directory, you can run:
+1) Homepage
+<img width="1428" alt="Screenshot 2022-10-01 at 6 03 02 PM" src="https://user-images.githubusercontent.com/49722470/193409859-d5418ec9-65bb-4295-a66e-2726c9c60d01.png">
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2) Current location : Automatically gets your current location if no city selected
+<img width="1428" alt="Screenshot 2022-10-01 at 6 03 48 PM" src="https://user-images.githubusercontent.com/49722470/193409873-be070d5e-41f0-47d1-ac59-16c785e9d5fa.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3) Autocomplete : For serching new cities
+<img width="1428" alt="Screenshot 2022-10-01 at 6 03 30 PM" src="https://user-images.githubusercontent.com/49722470/193409869-a341fe8c-83bc-41f6-a7dd-21142d0c66fe.png">
+<img width="1428" alt="Screenshot 2022-10-01 at 6 07 18 PM" src="https://user-images.githubusercontent.com/49722470/193409994-81f2c9b6-0898-4021-8abf-20ec2edfd0a5.png">
