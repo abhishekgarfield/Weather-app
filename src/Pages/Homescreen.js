@@ -120,17 +120,17 @@ const Homescreen = () => {
           </div>
         )}
         <div className="weather-info">
-          <h2>{`Weather in ${weather.city}`}</h2>
-          <h1>{`${weather.temp}°C`}</h1>
+          <h2>{`Weather in ${weather.city ? weather.city:"Tokyo"}`}</h2>
+          <h1>{`${weather.temp ? weather.temp : "23"}°C`}</h1>
           <div className="weather-desc">
             <img
-              src={`https://openweathermap.org/img/wn/${weather.url}@2x.png`}
+              src={`https://openweathermap.org/img/wn/${weather.url ? weather.url :"01d"}@2x.png`}
               alt="weather"
             />
-            <span>{weather.info}</span>
+            <span>{weather.info ? weather.info :" Thundering"}</span>
           </div>
-          <p>{`Humidity: ${weather.humidity}%`}</p>
-          <p>{`Wind speed: ${weather.winds}km/h`}</p>
+          <p>{`Humidity: ${weather.humidity ? weather.humidity : 40}%`}</p>
+          <p>{`Wind speed: ${weather.winds ? weather.winds : 78}km/h`}</p>
         </div>
       </div>
     </div>
