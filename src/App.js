@@ -1,10 +1,8 @@
-
+import Homescreen from "./Pages/Homescreen";
 
 function App() {
   return (
-    <div>
-      hello
-      </div>
+    <Homescreen/>
   );
 }
 

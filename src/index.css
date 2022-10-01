@@ -4,9 +4,6 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
- 
-  background-color: red;
-  flex-grow: 1;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -15,11 +12,95 @@ code {
     monospace;
 }
 
-.Main-container
-{
-  background-color: yellow;
+.Main-container {
   background: url("https://i.imgur.com/aUZiFmh.jpg");
-  background-position: center;
-flex:1 0 30%;  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-repeat: no-repeat;
   background-size: cover;
+  align-items: center;
+}
+
+.mid-container {
+  background-color: rgba(0, 0, 0, 0.772);
+  display: flex;
+  padding: 40px 50px 30px 50px;
+  color: aliceblue;
+  flex-direction: column;
+  border-radius: 25px;
+
+}
+
+.serch-container {
+  display: flex;
+  background-color: rgba(211, 211, 211, 0.334);
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: row;
+}
+
+.serch-container input {
+  width: 30vw;
+  font-size: 20px;
+  color: white;
+  outline: none;
+  border: 0px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: transparent
+}
+
+.serch-container i {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 10px;
+  transition: 0.2s all;
+}
+
+.serch-container i:hover {
+  color: black;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.weather-desc {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  padding: 0px;
+  font-weight: 300;
+  font-size: 25px;
+  margin: 0px;
+  margin: 2px 0px 2px 0px;
+}
+
+h1 {
+  margin: 10px 0px 2px 0px;
+  font-size: 50px;
+  letter-spacing: 1px;
+
+}
+
+h2 {
+  font-size: 35px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin: 15px 0px 15px 0px;
+}
+
+span {
+  padding: 0px;
+  font-weight: 300;
+  font-size: 25px;
 }
