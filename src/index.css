@@ -32,6 +32,7 @@ code {
   color: aliceblue;
   flex-direction: column;
   border-radius: 25px;
+  position: relative;
 
 }
 
@@ -103,4 +104,21 @@ span {
   padding: 0px;
   font-weight: 300;
   font-size: 25px;
+}
+.drop-container
+{
+  position: relative;
+  background-color: rgba(211, 211, 211, 0.459);
+  padding: 20px;
+  margin-top: 2px;
+  border-radius: 10px;
+}
+.drop-Down{
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.365);
+}
+.drop-Down:hover{
+  background-color:  rgba(211, 211, 211, 0.159);
+  cursor: pointer;
 }
