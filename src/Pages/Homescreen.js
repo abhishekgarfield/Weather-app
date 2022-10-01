@@ -2,16 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 const Homescreen = () => {
   const [dropData, setDropdata] = useState(null);
-  const [weather, setWeather] = useState({
-    humidity: 88,
-    winds: 78,
-    url: "01d",
-    city: "tokyo",
-    temp: "23",
-    info: "dusky",
-  });
+  const [weather, setWeather] = useState({});
   // city
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState("");
 
   // Latitude and longitude
   const [coords, setCoords] = useState({
@@ -41,9 +34,9 @@ const Homescreen = () => {
         setWeather(temp);
       });
   };
-
+  console.log(city.length);
   // if no city entered
-  !city &&
+  city.length == 0 &&
     !coords.lat &&
     navigator.geolocation.getCurrentPosition((position) => {
       console.log("here");
@@ -57,15 +50,18 @@ const Homescreen = () => {
 
   const handleChange = (e) => {
     console.log(e.target.value);
-    const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${e.target.value}&apiKey=9c56f29c54234633b30fb40676acb672`;
-    fetch(url, { method: "Get" })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setDropdata(data);
-      });
+    setCity(e.target.value);
+    if (e.target.value.length > 2) {
+      const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${e.target.value}&apiKey=9c56f29c54234633b30fb40676acb672`;
+      fetch(url, { method: "Get" })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setDropdata(data);
+        });
+    }
   };
 
   useEffect(() => {
@@ -80,16 +76,21 @@ const Homescreen = () => {
           <input
             type="text"
             name="city"
+            value={city}
             id="city"
             placeholder="Enter city name !"
             onChange={(e) => {
-              if (e.target.value.length > 2) {
-                handleChange(e);
-              }
+              handleChange(e);
             }}
           />
 
-          <i className="fa fa-search"></i>
+          <i
+            className={city.length > 1 ? "fa fa-remove" : "fa fa-search"}
+            onClick={() => {
+              setCity("");
+              setDropdata(null);
+            }}
+          ></i>
         </div>
         {dropData && (
           <div className="drop-container">
@@ -104,8 +105,12 @@ const Homescreen = () => {
                       temp.long = data.geometry.coordinates[0];
                       console.log(temp);
                       setCoords(temp);
-                      setWeather({...weather,["city"]:data.properties.address_line1})
-                      setCity(data.properties.address_line1)
+                      setWeather({
+                        ...weather,
+                        ["city"]: data.properties.address_line1,
+                      });
+                      setCity(data.properties.address_line1);
+                      setDropdata(null);
                     }}
                   >
                     {`${data.properties.address_line1} , ${data.properties.state} , ${data.properties.country}`}
