@@ -4,10 +4,22 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
+ 
+  background-color: red;
+  flex-grow: 1;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.Main-container
+{
+  background-color: yellow;
+  background: url("https://i.imgur.com/aUZiFmh.jpg");
+  background-position: center;
+flex:1 0 30%;  background-repeat: no-repeat;
+  background-size: cover;
 }
