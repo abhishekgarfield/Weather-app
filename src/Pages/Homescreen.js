@@ -31,7 +31,7 @@ const Homescreen = () => {
       })
       .then((data) => {
         const temp = {};
-        temp.city = data.city.name;
+        temp.city = weather.city ? weather.city : data.city.name;
         temp.temp = data.list[0].temp.day;
         temp.url = data.list[0].weather[0].icon;
         temp.info = data.list[0].weather[0].description;
@@ -104,6 +104,8 @@ const Homescreen = () => {
                       temp.long = data.geometry.coordinates[0];
                       console.log(temp);
                       setCoords(temp);
+                      setWeather({...weather,["city"]:data.properties.address_line1})
+                      setCity(data.properties.address_line1)
                     }}
                   >
                     {`${data.properties.address_line1} , ${data.properties.state} , ${data.properties.country}`}
